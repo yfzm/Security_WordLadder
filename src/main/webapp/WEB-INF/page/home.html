@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <title>WordLadder</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>Begin</td>
+        <td>
+            <input id="begin" type="text">
+        </td>
+    </tr>
+    <tr>
+        <td>End</td>
+        <td>
+            <input type="text" id="end">
+        </td>
+    </tr>
+</table>
+<button id="run_ladder">获取ladder</button>
+<p id="ladder_area"></p>
+
+<script>
+
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split("&");
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] === variable) {
+                return pair[1];
+            }
+        }
+        return (false);
+    }
+
+    $("#run_ladder").click(function () {
+        var begin_txt = $("#begin").val();
+        var end_txt = $("#end").val();
+
+        // alert(begin_txt + " " + end_txt);
+
+        $.ajax({
+            "url": "/wordladder?begin=" + begin_txt + "&end=" + end_txt,
+            "type": "get",
+            "dataType": "json",
+            "async": false,
+
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("Authorization", "Bearer " + getQueryVariable("access_token"));
+            },
+
+            success: function (result) {
+                if (result.ladder) {
+                    $("#ladder_area").text(result.ladder.toString());
+                } else {
+                    alert("认证错误！");
+                }
+            },
+            error: function (msg) {
+                alert("发生错误：" + msg);
+            }
+
+
+        })
+    });
+
+</script>
+
+</body>
+</html>

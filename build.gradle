@@ -21,12 +21,20 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+    maven {
+        url('https://repo.spring.io/libs-snapshot')
+    }
 }
 
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.session:spring-session-core')
+    compile('org.springframework.security.oauth:spring-security-oauth2:2.3.3.BUILD-SNAPSHOT')
+    compile("org.springframework.boot:spring-boot-starter-data-redis")
+    runtime "org.springframework.boot:spring-boot-starter-tomcat"
+    runtime "org.apache.tomcat.embed:tomcat-embed-jasper"
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')
 }
