@@ -1,8 +1,8 @@
 package com.yfzm.security.wordladder.web;
 
 import ch.qos.logback.classic.BasicConfigurator;
-import com.yfzm.security.demo.beans.LadderBean;
-import com.yfzm.security.demo.utils.WordLadder;
+import com.yfzm.security.wordladder.beans.LadderBean;
+import com.yfzm.security.wordladder.utils.WordLadder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
