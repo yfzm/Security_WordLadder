@@ -1,6 +1,5 @@
 package com.yfzm.security.wordladder.web;
 
-import ch.qos.logback.classic.BasicConfigurator;
 import com.yfzm.security.wordladder.beans.LadderBean;
 import com.yfzm.security.wordladder.utils.WordLadder;
 import org.apache.logging.log4j.LogManager;
