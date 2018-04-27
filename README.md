@@ -44,12 +44,12 @@
 ----------------
 
 ![wrong_token](screenshot/wrong_token.png)  
-凭借token获取wordladder
+由于token不正确，认证不通过，无法进入主页面
 
 ----------------
 
 ![wordladder](screenshot/wordladder.png)  
-由于token不正确，认证不通过，无法进入主页面
+凭借token获取wordladder
 
 ----------------
 
