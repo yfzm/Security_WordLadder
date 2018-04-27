@@ -33,25 +33,37 @@
 
 ## 5. 效果展示
 
-![get_token](screenshot/get_token.png)
+![get_token](screenshot/get_token.png)  
 获取token
 
-![right_token](screenshot/right_token.png)
+----------------
+
+![right_token](screenshot/right_token.png)  
 成功凭借token进入主页面
 
-![wrong_token](screenshot/wrong_token.png)
+----------------
+
+![wrong_token](screenshot/wrong_token.png)  
 凭借token获取wordladder
 
-![wordladder](screenshot/wordladder.png)
+----------------
+
+![wordladder](screenshot/wordladder.png)  
 由于token不正确，认证不通过，无法进入主页面
 
-![database](./screenshot/database.png)
-database截图
+----------------
 
-![web1](screenshot/web1.png)
+![database](./screenshot/database.png)  
+MySQL截图
+
+----------------
+
+![web1](screenshot/web1.png)  
 获取ladder(无结果)
 
-![web2](screenshot/web2.png)
+----------------
+
+![web2](screenshot/web2.png)  
 成功获取ladder
 
 
