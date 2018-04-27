@@ -33,8 +33,12 @@ dependencies {
     compile('org.springframework.session:spring-session-core')
     compile('org.springframework.security.oauth:spring-security-oauth2:2.3.3.BUILD-SNAPSHOT')
     compile("org.springframework.boot:spring-boot-starter-data-redis")
+    compile("mysql:mysql-connector-java:5.1.37")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+//    compile("org.springframework.cloud:spring-cloud-starter-oauth2")
     runtime "org.springframework.boot:spring-boot-starter-tomcat"
     runtime "org.apache.tomcat.embed:tomcat-embed-jasper"
+    runtime "mysql:mysql-connector-java:5.1.37"
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('org.springframework.security:spring-security-test')
 }
