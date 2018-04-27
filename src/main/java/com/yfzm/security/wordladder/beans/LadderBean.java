@@ -4,10 +4,20 @@ import java.util.List;
 
 public class LadderBean {
 
+    private Boolean status;
     private String begin;
     private String end;
     private int length;
     private List<String> ladder;
+
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 
     public String getBegin() {
         return begin;

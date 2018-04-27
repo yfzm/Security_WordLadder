@@ -51,17 +51,22 @@
             "async": false,
 
             beforeSend: function (xhr) {
+                if (begin_txt === "" || end_txt === "") {
+                    alert("请输入begin和end");
+                    return false;
+                }
                 xhr.setRequestHeader("Authorization", "Bearer " + getQueryVariable("access_token"));
             },
 
             success: function (result) {
-                if (result.ladder) {
+                if (result.status && result.length !== 0) {
                     $("#ladder_area").text(result.ladder.toString());
                 } else {
-                    alert("认证错误！");
+                    $("#ladder_area").text("没有找到Word Ladder");
                 }
             },
             error: function (msg) {
+                console.log(msg);
                 alert("发生错误：" + msg);
             }
 

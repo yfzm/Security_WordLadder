@@ -22,9 +22,15 @@ public class LadderPage {
 //        BasicConfigurator.configure();
 
         LOGGER.info("Enter root page");
+        LadderBean lb = new LadderBean();
 
         if (begin == null || end == null) {
-            return null;
+            lb.setStatus(false);
+            lb.setBegin("");
+            lb.setEnd("");
+            lb.setLadder(null);
+            lb.setLength(0);
+            return lb;
         }
 
         WordLadder wl = new WordLadder();
@@ -32,7 +38,7 @@ public class LadderPage {
 
         LOGGER.info("params: begin:" + begin + ", end:" + end);
 
-        LadderBean lb = new LadderBean();
+        lb.setStatus(true);
         lb.setBegin(begin);
         lb.setEnd(end);
         lb.setLength(wl.getLadderStep());
@@ -40,11 +46,12 @@ public class LadderPage {
         int length = wl.getLadderStep();
         if (length > 0) {
             lb.setLadder(new ArrayList<>(wl.getLadderStack()));
+            LOGGER.info("Result: length:"+length + ", ladder:"+lb.getLadder().toString());
+
         } else {
             lb.setLadder(null);
+            LOGGER.info("Result: No ladder found.");
         }
-
-        LOGGER.info("Result: length:"+length + ", ladder:"+lb.getLadder().toString());
 
         return lb;
     }
